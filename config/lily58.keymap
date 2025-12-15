@@ -11,38 +11,13 @@
 
 / {
     behaviors {
-        nav_ht: nav_hold_tap {
+        layer_ht: layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "NAV_HOLD_TAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
-            bindings = <&mo>, <&tog>;
-        };
-
-        lower_ht: lower_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LOWER_HOLD_TAP";
+            label = "LAYER_HOLD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&tog>;
-        };
-
-        lower_mo_tag: lower_mo_tag {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LOWER_MO_TAG";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&mo 1>, <&tog 1>;
-        };
-
-        nav_mod_tap: nav_mod_tap {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_MOD_TAP";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&mo 2>, <&tog 2>;
         };
 
         shift_caps: shift_caps {
@@ -51,7 +26,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>, <&kt>;
         };
     };
 
@@ -68,11 +43,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                &kp N6        &kp N7    &kp N8     &kp N9   &kp N0    &kp GRAVE
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                                 &kp Y         &kp U     &kp I      &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                                 &kp H         &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B          &kp LBKT     &kp RBKT  &kp N         &kp M     &kp COMMA  &kp DOT  &kp FSLH  &shift_caps RIGHT_SHIFT CAPSLOCK
-                           &kp LALT  &kp LGUI  &lower_mo_tag  &kp SPACE    &kp RET   &nav_mod_tap  &kp BSPC  &kp RGUI
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                &kp N6         &kp N7    &kp N8     &kp N9   &kp N0    &kp GRAVE
+&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                                 &kp Y          &kp U     &kp I      &kp O    &kp P     &kp MINUS
+&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                                 &kp H          &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B          &kp LBKT     &kp RBKT  &kp N          &kp M     &kp COMMA  &kp DOT  &kp FSLH  &shift_caps RIGHT_SHIFT CAPSLOCK
+                           &kp LALT  &kp LGUI  &layer_ht 1 1  &kp SPACE    &kp RET   &layer_ht 2 2  &kp BSPC  &kp RGUI
             >;
         };
 

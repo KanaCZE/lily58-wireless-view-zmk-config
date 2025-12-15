@@ -4,17 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors/unicode.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
-
-#include <zmk-unicode/keys/czech.h>
-
-&uc {
-    default-mode = <UC_MODE_MACOS>;
-};
 
 / {
     behaviors {
@@ -40,6 +33,74 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        // Czech characters using ABC Extended dead keys
+        cs_e_mm: cs_e_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_e>, <&cs_e_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_s_mm: cs_s_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_s>, <&cs_s_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_c_mm: cs_c_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_c>, <&cs_c_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_r_mm: cs_r_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_r>, <&cs_r_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_z_mm: cs_z_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_z>, <&cs_z_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_y_mm: cs_y_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_y>, <&cs_y_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_a_mm: cs_a_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_a>, <&cs_a_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_i_mm: cs_i_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_i>, <&cs_i_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_ee_mm: cs_ee_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_ee>, <&cs_ee_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_u_mm: cs_u_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_u>, <&cs_u_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        cs_uu_mm: cs_uu_mm {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&cs_uu>, <&cs_uu_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -55,6 +116,139 @@
                 <&kp LEFT_SHIFT>;
 
             label = "SHIFT";
+        };
+
+        // Czech characters via ABC Extended dead keys
+        // ě (Option+V, E)
+        cs_e: cs_e {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp E>;
+        };
+        cs_e_upper: cs_e_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp LS(E)>;
+        };
+
+        // š (Option+V, S)
+        cs_s: cs_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp S>;
+        };
+        cs_s_upper: cs_s_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp LS(S)>;
+        };
+
+        // č (Option+V, C)
+        cs_c: cs_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp C>;
+        };
+        cs_c_upper: cs_c_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp LS(C)>;
+        };
+
+        // ř (Option+V, R)
+        cs_r: cs_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp R>;
+        };
+        cs_r_upper: cs_r_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp LS(R)>;
+        };
+
+        // ž (Option+V, Z)
+        cs_z: cs_z {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp Z>;
+        };
+        cs_z_upper: cs_z_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp V>, <&macro_release &kp LALT>, <&macro_tap &kp LS(Z)>;
+        };
+
+        // ý (Option+E, Y)
+        cs_y: cs_y {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp Y>;
+        };
+        cs_y_upper: cs_y_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp LS(Y)>;
+        };
+
+        // á (Option+E, A)
+        cs_a: cs_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp A>;
+        };
+        cs_a_upper: cs_a_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp LS(A)>;
+        };
+
+        // í (Option+E, I)
+        cs_i: cs_i {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp I>;
+        };
+        cs_i_upper: cs_i_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp LS(I)>;
+        };
+
+        // é (Option+E, E)
+        cs_ee: cs_ee {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp E>;
+        };
+        cs_ee_upper: cs_ee_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp LS(E)>;
+        };
+
+        // ú (Option+E, U)
+        cs_u: cs_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
+        };
+        cs_u_upper: cs_u_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp LS(U)>;
+        };
+
+        // ů (Option+U, U)
+        cs_uu: cs_uu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
+        };
+        cs_uu_upper: cs_uu_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp LS(U)>;
         };
     };
 
@@ -90,9 +284,9 @@
 
             display-name = "Czech";
             bindings = <
-&trans  &kp KP_PLUS  &uc UC_CS_EC  &uc UC_CS_SC  &uc UC_CS_CC  &uc UC_CS_RC                    &uc UC_CS_ZC  &uc UC_CS_YA  &uc UC_CS_AA  &uc UC_CS_IA  &uc UC_CS_EA  &trans
-&trans  &trans       &trans       &trans       &trans       &trans                           &trans       &trans       &trans       &trans       &trans       &uc UC_CS_UA
-&trans  &trans       &trans       &trans       &trans       &trans                           &trans       &trans       &trans       &trans       &uc UC_CS_UR  &trans
+&trans  &kp KP_PLUS  &cs_e_mm     &cs_s_mm     &cs_c_mm     &cs_r_mm                         &cs_z_mm     &cs_y_mm     &cs_a_mm     &cs_i_mm     &cs_ee_mm    &trans
+&trans  &trans       &trans       &trans       &trans       &trans                           &trans       &trans       &trans       &trans       &trans       &cs_u_mm
+&trans  &trans       &trans       &trans       &trans       &trans                           &trans       &trans       &trans       &trans       &cs_uu_mm    &trans
 &trans  &trans       &trans       &trans       &trans       &trans       &trans    &trans      &trans       &trans       &trans       &trans       &trans       &trans
                         &trans    &trans       &trans       &trans    &trans                    &trans       &trans       &trans
             >;

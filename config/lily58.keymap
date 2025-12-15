@@ -15,7 +15,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_ONESHOT";
             #binding-cells = <0>;
-            bindings = <&kp CAPSLOCK>;
+            bindings = <&kp CAPSLOCK>, <&kp CAPSLOCK>;
         };
 
         nav_mo_tog: nav_mo_tog {

@@ -5,9 +5,25 @@
  */
 
 #include <behaviors.dtsi>
+#include <behaviors/unicode.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+
+/ {
+  unicode {
+    sh = <0x0161>;  // š
+    SH = <0x0160>;  // Š
+    ch = <0x010D>;  // č
+    CH = <0x010C>;  // Č
+    rzh = <0x0159>; // ř
+    RZH = <0x0158>; // Ř
+    zh = <0x017E>;  // ž
+    ZH = <0x017D>;  // Ž
+    eh = <0x011B>;  // ě
+    EH = <0x011A>;  // Ě
+  };
+};
 
 / {
     behaviors {

@@ -239,16 +239,16 @@
             bindings = <&macro_press &kp LALT>, <&macro_tap &kp E>, <&macro_release &kp LALT>, <&macro_tap &kp LS(U)>;
         };
 
-        // ů (Option+U, U)
+        // ů (Option+A, U)
         cs_uu: cs_uu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp A>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
         };
         cs_uu_upper: cs_uu_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp LS(U)>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp A>, <&macro_release &kp LALT>, <&macro_tap &kp LS(U)>;
         };
     };
 
